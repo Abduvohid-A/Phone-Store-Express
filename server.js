@@ -12,19 +12,15 @@ app.use(express.json());
 
 app.use("/", mainRouter);
 
-
-mongoose.connect(MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-    .then(() => {
-        console.log(`Mongo DB connected with Server  `);
-
-        app.listen(PORT, () => {
-            console.log(`Server is listening on port ${PORT}`);
-        });
-    })
-    .catch((err) => {
-        console.log(`Failed to connect with Mongo DB `, err);
-        process.exit(1);
+mongoose
+  .connect(MONGO_URL)
+  .then(() => {
+    console.log(`Mongo DB connected with Server  `);
+    app.listen(PORT, () => {
+      console.log(`Server is listening on port ${PORT}`);
     });
+  })
+  .catch((err) => {
+    console.log(`Failed to connect with Mongo DB `, err);
+    process.exit(1);
+  });

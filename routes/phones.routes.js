@@ -1,7 +1,10 @@
 import { Router } from "express";
 import {
-    getAllphones, getPhone,
-    deletePhone, putPhone, createPhone
+  getAllphones,
+  getPhone,
+  deletePhone,
+  putPhone,
+  createPhone,
 } from "../controllers/phones.controllers.js";
 
 const router = Router();
@@ -12,4 +15,4 @@ router.delete("/:id", deletePhone);
 router.put("/:id", putPhone);
 router.post("/", createPhone);
 
-export default router
+export default router;

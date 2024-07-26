@@ -11,4 +11,4 @@ router.use("/sales", saleRouter);
 router.use("/phones", phoneRouter);
 router.use("/employees", employeesRouter);
 
-export default router
+export default router;

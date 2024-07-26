@@ -1,7 +1,10 @@
 import { Router } from "express";
 import {
-    getAllSales, getSale,
-    deleteSale, putSale, createSale
+  getAllSales,
+  getSale,
+  deleteSale,
+  putSale,
+  createSale,
 } from "../controllers/sales.controllers.js";
 
 const router = Router();
@@ -12,5 +15,4 @@ router.delete("/:id", deleteSale);
 router.put("/:id", putSale);
 router.post("/", createSale);
 
-
-export default router
+export default router;
